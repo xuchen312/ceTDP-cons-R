@@ -1,6 +1,6 @@
 # ceTDP-cons-R
 
-**Stage 2 R script** for computing the lower bounds on TDP (True Discovery Proportion) from **ceTDP-cons**.
+**Stage 2 R script** for computing conservative lower bounds on the TDP (True Discovery Proportion) using **ceTDP-cons**.
 
 ## Installation
 
@@ -23,8 +23,9 @@ Rscript lb.R -k <k-value> -i <file> -o <output>
 
 ```r
 source("lb_funs.R")
-# Then use the R functions directly (see Example below)
 ```
+
+Then use the R functions directly (see Example below)
   
 ## Arguments
   
@@ -56,7 +57,7 @@ A table summarizing the estimated lower bounds for each input region:
 
 - `File`: input file name
 - `Size`: |S| = number of voxels in the region (row count)
-- `TDN`: estimated TDN (True Discovery Number) lower bound
+- `TDN`: TDN (True Discovery Number) lower bound
 - `TDP`: corresponding TDP lower bound = TDN / |S|
 
 If `-o` is specified, the table is also saved as a CSV file.
@@ -66,7 +67,7 @@ If `-o` is specified, the table is also saved as a CSV file.
 ### Command line example
 
 ```bash
-python lb.py -k 20 xyz.csv -o results
+Rscript lb.R -k 20 -i xyz.csv -o results
 ```
 
 Output (printed to terminal, and saved to `results.csv`):
